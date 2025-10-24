@@ -1,0 +1,13 @@
+# Folder/file konfigurasi sistem
+.DS_Store
+Thumbs.db
+
+config.js
+
+# File yang mungkin menyimpan rahasia lokal
+# Jika Anda membuat file konfigurasi terpisah untuk URL:
+# .env 
+# config.local.js 
+
+# Jika Anda menyimpan seluruh project di folder build lokal:
+# /build

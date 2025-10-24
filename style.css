@@ -1,0 +1,215 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 210mm; /* Lebar A4 */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Styling Form Input --- */
+.input-form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.input-form h2, .input-form h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.input-form label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+.input-form input[type="text"], 
+.input-form input[type="date"] {
+    padding: 5px;
+    margin: 0;
+    width: 250px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.input-form hr {
+    margin: 15px 0;
+}
+
+.input-form button {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#cetak-pdf {
+    background-color: #ce142a;
+    font-weight: bold;
+}
+
+/* --- Styling Tabel Input Item (Perbaikan UI) --- */
+.item-input-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+.item-input-table th {
+    background-color: #f0f0f0;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+.item-input-table td {
+    padding: 3px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+.item-input-table input,
+.item-input-table select {
+    width: 100%;
+    margin: 0;
+    padding: 5px 3px;
+    border: none;
+    box-sizing: border-box;
+    text-align: center;
+}
+.item-input-table .remove-item {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    margin: 0;
+    width: 100%;
+}
+
+
+/* --- Styling Invoice PDF --- */
+#invoice-box {
+    padding: 20mm;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.header-pdf {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: -20mm -20mm 15px -20mm;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px solid #ce142a;
+    color: #ce142a;
+    padding-left: 20mm;
+}
+
+.invoice-details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.left-details h1 {
+    color: #ce142a;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.right-details {
+    text-align: right;
+    line-height: 1.5;
+}
+
+.right-details .trans-no {
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#barcode-container {
+    margin-left: auto;
+    margin-top: 5px;
+    display: block;
+}
+
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.item-table th, .item-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.item-table thead th {
+    background-color: #ce142a;
+    color: white;
+    font-weight: bold;
+}
+
+.item-table .foto { width: 10%; }
+.item-table .harga { width: 15%; text-align: right; }
+
+.item-table tfoot td {
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.item-table tfoot .text-right {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.item-table tfoot .total-harga {
+    background-color: #f8e1e4;
+    color: #ce142a;
+    text-align: right;
+    border: 1px solid #ccc;
+}
+
+.terbilang {
+    margin: 15px 0;
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-size: 12px;
+    border-top: 1px solid #ccc;
+}
+
+.perhatian {
+    margin-top: 20px;
+    font-size: 11px;
+}
+
+.signatures {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    font-size: 12px;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Otomatis Interaktif</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.6/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="input-form">
+            <h2>Form Input Data Faktur</h2>
+            <div class="form-group">
+                <label for="input-pelanggan">Nama Pelanggan:</label>
+                <input type="text" id="input-pelanggan" value="Ilham Rigan">
+            </div>
+            <div class="form-group">
+                <label for="input-tanggal">Tanggal Transaksi:</label>
+                <input type="date" id="input-tanggal">
+            </div>
+            <div class="form-group">
+                <label for="input-notrans">No. Transaksi:</label>
+                <input type="text" id="input-notrans" value="TRX-12345678" readonly> 
+            </div>
+            
+            <hr>
+            <h3>Input Item Barang</h3>
+            <table class="item-input-table">
+                <thead>
+                    <tr>
+                        <th style="width: 35%">Produk (Jenis & Model)</th>
+                        <th style="width: 10%">Kadar</th>
+                        <th style="width: 15%">Berat (Gr)</th>
+                        <th style="width: 25%">Harga Satuan (Rp)</th>
+                        <th style="width: 15%">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="input-item-body">
+                    </tbody>
+            </table>
+            
+            <button id="add-item">Tambah Item Barang</button>
+            <hr>
+            <button id="cetak-pdf">Simpan Data & Cetak Faktur (PDF)</button>
+        </div>
+        <br>
+
+        <div id="invoice-box">
+            <div class="header-pdf">
+                Invoice Transaksi - <span id="display-notrans-header"></span>
+            </div>
+            
+            <div class="invoice-details">
+                <div class="left-details">
+                    <h1>SEMAR MOUNTAIN</h1>
+                    <p><strong>Toko Mas Hartono Wiyono</strong></p>
+                    <p>Ps. Wates, Jl. Diponegoro No. 16A, Wates,</p>
+                    <p>Kec. Wates, Kabupaten Kulon Progo, Daerah Istimewa Yogyakarta 55651</p>
+                    <p>IG: @tokosemarjuna</p>
+                    <p>WhatsApp: 0812-3456-7890</p>
+                </div>
+                <div class="right-details">
+                    <p>Tegal, **<span id="display-tanggal"></span>**</p>
+                    <p>Nama: **<span id="display-pelanggan"></span>**</p>
+                    <p>Alamat: -</p>
+                    <p>No. Telepon: -</p>
+                    <p class="trans-no">No. Trans: **<span id="display-notrans"></span>**</p>
+                    <svg id="barcode-container"></svg>
+                </div>
+            </div>
+
+            <h2 class="section-title">Detail Barang</h2>
+            <table class="item-table">
+                <thead>
+                    <tr>
+                        <th class="foto">Foto</th>
+                        <th class="jenis">Jenis</th>
+                        <th class="model">Model</th>
+                        <th class="kadar">Kadar</th>
+                        <th class="kode">Kode</th>
+                        <th class="berat">Berat</th>
+                        <th class="harga">Harga</th>
+                    </tr>
+                </thead>
+                <tbody id="invoice-body">
+                    </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="6" class="text-right">Total:</td>
+                        <td class="total-harga">Rp 0</td>
+                    </tr>
+                </tfoot>
+            </table>
+            
+            <div class="terbilang">
+                <strong>Terbilang:</strong> <span id="text-terbilang">Nol Rupiah</span>
+            </div>
+
+            <div class="perhatian">
+                <strong>Perhatian:</strong>
+                <ol>
+                    <li>Barang, berat, kadar sudah diperiksa dengan benar oleh pembeli.</li>
+                    <li>Perhiasan bisa dijual kembali sesuai harga pasar dikurangi ongkos.</li>
+                    <li>Kecuali barang rusak, patah, atau berisi batu berbeda nilai.</li>
+                </ol>
+            </div>
+
+            <div class="signatures">
+                <div class="signature-box">
+                    <p>Kasir:</p>
+                    <br><br>
+                    <p>__________</p>
+                </div>
+                <div class="signature-box">
+                    <p>Owner Toko:</p>
+                    <br><br>
+                    <p>__________</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
